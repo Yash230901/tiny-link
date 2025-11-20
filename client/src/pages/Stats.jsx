@@ -7,7 +7,7 @@ export default function Stats() {
   const [link, setLink] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/links/${code}`)
+    axios.get(`https://tiny-link-lne5.onrender.com/api/links/${code}`)
       .then(res => setLink(res.data));
   }, []);
 
@@ -19,7 +19,7 @@ export default function Stats() {
         <h1 className="text-3xl font-bold mb-4">Stats for {code}</h1>
         <div className="bg-gray-900 p-4 rounded space-y-2">
           <p>URL: {link.url}</p>
-          <p>redirectURL: {`http://localhost:5000/api/links/r/${code}`}</p>
+          <p>redirectURL: {`https://tiny-link-lne5.onrender.com/api/links/r/${code}`}</p>
           <p>TotalClicks: {link.clicks}</p>
           <p>Last Click: {link.lastClicked || "Never clicked"}</p>
           <p>Created At: {new Date(link.createdAt).toLocaleString()}</p>

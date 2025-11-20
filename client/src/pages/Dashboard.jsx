@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Dashboard() {
-  const API = "http://localhost:5000/api/links";
+  const API = "https://tiny-link-lne5.onrender.com/api/links";
 
   const [links, setLinks] = useState([]);
   const [url, setUrl] = useState("");
