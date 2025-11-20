@@ -8,6 +8,7 @@ export default function Dashboard() {
   const [links, setLinks] = useState([]);
   const [url, setUrl] = useState("");
   const [code, setCode] = useState("");
+
   const fetchLinks = async () => {
     const res = await axios.get(API);
     setLinks(res.data);
@@ -52,7 +53,7 @@ export default function Dashboard() {
                 <p className="text-xs">TotalClicks: {l.clicks}</p>
               </div>
               <div className="flex gap-3">
-                <a href={`/code/${l.code}`} className="text-blue-400 underline">Stats</a>
+                <Link to={`/code/${l.code}`} className="text-blue-400 underline">Stats</Link>
                 <button onClick={() => deleteLink(l.code)} className="text-red-400">Delete</button>
               </div>
             </div>
